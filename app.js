@@ -3,13 +3,6 @@ var model = new falcor.Model({
 });
 
 
-model
-  .get(
-    ["events", {from: 0, to: 4}, ["name", "description"]],
-    ['events', {from: 0, to: 4}, 'location', ['city', 'state']]
-  ).then(res => {
-    console.log(res)
-    Object.keys(res.json.events).map(key => {
-      console.log(res.json.events[key])
-    })
-  })
+model.get('genrelist[0].name','genrelist[0].titles[0..1].name').then(function(data) {
+  console.log(data);
+});
